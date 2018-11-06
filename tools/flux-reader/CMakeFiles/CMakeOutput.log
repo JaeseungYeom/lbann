@@ -1,0 +1,453 @@
+The system is: Linux - 3.10.0-862.14.4.1chaos.ch6.x86_64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/tce/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/3.9.2/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/tce/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/3.9.2/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_4e23f/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_4e23f.dir/build.make CMakeFiles/cmTC_4e23f.dir/build
+gmake[1]: Entering directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4e23f.dir/testCCompiler.c.o
+/usr/tce/bin/cc    -o CMakeFiles/cmTC_4e23f.dir/testCCompiler.c.o   -c /p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_4e23f
+/usr/tce/packages/cmake/cmake-3.9.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4e23f.dir/link.txt --verbose=1
+/usr/tce/bin/cc      -rdynamic CMakeFiles/cmTC_4e23f.dir/testCCompiler.c.o  -o cmTC_4e23f 
+gmake[1]: Leaving directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_9735f/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_9735f.dir/build.make CMakeFiles/cmTC_9735f.dir/build
+gmake[1]: Entering directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9735f.dir/CMakeCCompilerABI.c.o
+/usr/tce/bin/cc    -o CMakeFiles/cmTC_9735f.dir/CMakeCCompilerABI.c.o   -c /usr/tce/packages/cmake/cmake-3.9.2/share/cmake/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_9735f
+/usr/tce/packages/cmake/cmake-3.9.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9735f.dir/link.txt --verbose=1
+/usr/tce/bin/cc     -v -rdynamic CMakeFiles/cmTC_9735f.dir/CMakeCCompilerABI.c.o  -o cmTC_9735f 
+Reading specs from /usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/specs
+COLLECT_GCC=/usr/tce/packages/gcc/gcc-4.9.3/bin/gcc
+COLLECT_LTO_WRAPPER=/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/lto-wrapper
+Target: x86_64-unknown-linux-gnu
+Configured with: /builddir/build/BUILD/gccspack/spack/var/spack/stage/gcc-4.9.3-34vmmvov5ct2riknhkfcmxieffb5pyex/gcc-4.9.3/configure --prefix=/usr/tce/packages/gcc/gcc-4.9.3 --libdir=/usr/tce/packages/gcc/gcc-4.9.3/lib64 --disable-multilib --enable-languages=c,java,c++,fortran,objc,go --with-mpc=/builddir/build/BUILD/gccspack/spack/opt/spack/linux-redhat7-x86_64/gcc-4.8.5/mpc-1.0.3-hj3ado6aurkkeiulr7fabqov7dh5nomf --with-mpfr=/builddir/build/BUILD/gccspack/spack/opt/spack/linux-redhat7-x86_64/gcc-4.8.5/mpfr-3.1.4-btpsymgkcfsazkot7mksiiaiqi56q3iz --with-gmp=/builddir/build/BUILD/gccspack/spack/opt/spack/linux-redhat7-x86_64/gcc-4.8.5/gmp-6.1.0-rdkrxbnzwlletmtlntg4vbxhc24zspva --enable-lto --with-quad
+Thread model: posix
+gcc version 4.9.3 (GCC) 
+COMPILER_PATH=/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/:/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/:/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/:/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/:/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/
+LIBRARY_PATH=/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/:/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_9735f' '-mtune=generic' '-march=x86-64'
+ /usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/collect2 -plugin /usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/liblto_plugin.so -plugin-opt=/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/lto-wrapper -plugin-opt=-fresolution=/var/tmp/yeom2/ccaM3W16.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -rpath /usr/tce/packages/gcc/gcc-4.9.3/lib:/usr/tce/packages/gcc/gcc-4.9.3/lib64 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_9735f /lib/../lib64/crt1.o /lib/../lib64/crti.o /usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/crtbegin.o -L/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3 -L/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../.. CMakeFiles/cmTC_9735f.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/crtend.o /lib/../lib64/crtn.o
+gmake[1]: Leaving directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/gmake" "cmTC_9735f/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTC_9735f.dir/build.make CMakeFiles/cmTC_9735f.dir/build]
+  ignore line: [gmake[1]: Entering directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_9735f.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/tce/bin/cc    -o CMakeFiles/cmTC_9735f.dir/CMakeCCompilerABI.c.o   -c /usr/tce/packages/cmake/cmake-3.9.2/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_9735f]
+  ignore line: [/usr/tce/packages/cmake/cmake-3.9.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9735f.dir/link.txt --verbose=1]
+  ignore line: [/usr/tce/bin/cc     -v -rdynamic CMakeFiles/cmTC_9735f.dir/CMakeCCompilerABI.c.o  -o cmTC_9735f ]
+  ignore line: [Reading specs from /usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/specs]
+  ignore line: [COLLECT_GCC=/usr/tce/packages/gcc/gcc-4.9.3/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/lto-wrapper]
+  ignore line: [Target: x86_64-unknown-linux-gnu]
+  ignore line: [Configured with: /builddir/build/BUILD/gccspack/spack/var/spack/stage/gcc-4.9.3-34vmmvov5ct2riknhkfcmxieffb5pyex/gcc-4.9.3/configure --prefix=/usr/tce/packages/gcc/gcc-4.9.3 --libdir=/usr/tce/packages/gcc/gcc-4.9.3/lib64 --disable-multilib --enable-languages=c,java,c++,fortran,objc,go --with-mpc=/builddir/build/BUILD/gccspack/spack/opt/spack/linux-redhat7-x86_64/gcc-4.8.5/mpc-1.0.3-hj3ado6aurkkeiulr7fabqov7dh5nomf --with-mpfr=/builddir/build/BUILD/gccspack/spack/opt/spack/linux-redhat7-x86_64/gcc-4.8.5/mpfr-3.1.4-btpsymgkcfsazkot7mksiiaiqi56q3iz --with-gmp=/builddir/build/BUILD/gccspack/spack/opt/spack/linux-redhat7-x86_64/gcc-4.8.5/gmp-6.1.0-rdkrxbnzwlletmtlntg4vbxhc24zspva --enable-lto --with-quad]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.9.3 (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/:/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/:/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/:/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/:/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/:/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_9735f' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/collect2 -plugin /usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/liblto_plugin.so -plugin-opt=/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/lto-wrapper -plugin-opt=-fresolution=/var/tmp/yeom2/ccaM3W16.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -rpath /usr/tce/packages/gcc/gcc-4.9.3/lib:/usr/tce/packages/gcc/gcc-4.9.3/lib64 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_9735f /lib/../lib64/crt1.o /lib/../lib64/crti.o /usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/crtbegin.o -L/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3 -L/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../.. CMakeFiles/cmTC_9735f.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/crtend.o /lib/../lib64/crtn.o]
+    arg [/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/var/tmp/yeom2/ccaM3W16.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-rpath] ==> ignore
+    arg [/usr/tce/packages/gcc/gcc-4.9.3/lib:/usr/tce/packages/gcc/gcc-4.9.3/lib64] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_9735f] ==> ignore
+    arg [/lib/../lib64/crt1.o] ==> ignore
+    arg [/lib/../lib64/crti.o] ==> ignore
+    arg [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/crtbegin.o] ==> ignore
+    arg [-L/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3] ==> dir [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3]
+    arg [-L/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../../../lib64] ==> dir [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../..] ==> dir [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../..]
+    arg [CMakeFiles/cmTC_9735f.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/crtend.o] ==> ignore
+    arg [/lib/../lib64/crtn.o] ==> ignore
+  collapse library dir [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3] ==> [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3]
+  collapse library dir [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../../../lib64] ==> [/usr/tce/packages/gcc/gcc-4.9.3/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../..] ==> [/usr/tce/packages/gcc/gcc-4.9.3/lib64]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3;/usr/tce/packages/gcc/gcc-4.9.3/lib64;/lib64;/usr/lib64]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_23af9/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_23af9.dir/build.make CMakeFiles/cmTC_23af9.dir/build
+gmake[1]: Entering directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_23af9.dir/feature_tests.c.o
+/usr/tce/bin/cc   -std=c11 -o CMakeFiles/cmTC_23af9.dir/feature_tests.c.o   -c /p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/feature_tests.c
+Linking C executable cmTC_23af9
+/usr/tce/packages/cmake/cmake-3.9.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_23af9.dir/link.txt --verbose=1
+/usr/tce/bin/cc      -rdynamic CMakeFiles/cmTC_23af9.dir/feature_tests.c.o  -o cmTC_23af9 
+gmake[1]: Leaving directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_f3da8/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_f3da8.dir/build.make CMakeFiles/cmTC_f3da8.dir/build
+gmake[1]: Entering directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f3da8.dir/feature_tests.c.o
+/usr/tce/bin/cc   -std=c99 -o CMakeFiles/cmTC_f3da8.dir/feature_tests.c.o   -c /p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/feature_tests.c
+Linking C executable cmTC_f3da8
+/usr/tce/packages/cmake/cmake-3.9.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f3da8.dir/link.txt --verbose=1
+/usr/tce/bin/cc      -rdynamic CMakeFiles/cmTC_f3da8.dir/feature_tests.c.o  -o cmTC_f3da8 
+gmake[1]: Leaving directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_f7be4/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_f7be4.dir/build.make CMakeFiles/cmTC_f7be4.dir/build
+gmake[1]: Entering directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f7be4.dir/feature_tests.c.o
+/usr/tce/bin/cc   -std=c90 -o CMakeFiles/cmTC_f7be4.dir/feature_tests.c.o   -c /p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/feature_tests.c
+Linking C executable cmTC_f7be4
+/usr/tce/packages/cmake/cmake-3.9.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7be4.dir/link.txt --verbose=1
+/usr/tce/bin/cc      -rdynamic CMakeFiles/cmTC_f7be4.dir/feature_tests.c.o  -o cmTC_f7be4 
+gmake[1]: Leaving directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_1abe9/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_1abe9.dir/build.make CMakeFiles/cmTC_1abe9.dir/build
+gmake[1]: Entering directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_1abe9.dir/testCXXCompiler.cxx.o
+/usr/tce/bin/c++     -o CMakeFiles/cmTC_1abe9.dir/testCXXCompiler.cxx.o -c /p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_1abe9
+/usr/tce/packages/cmake/cmake-3.9.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1abe9.dir/link.txt --verbose=1
+/usr/tce/bin/c++       -rdynamic CMakeFiles/cmTC_1abe9.dir/testCXXCompiler.cxx.o  -o cmTC_1abe9 
+gmake[1]: Leaving directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_0c1b8/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_0c1b8.dir/build.make CMakeFiles/cmTC_0c1b8.dir/build
+gmake[1]: Entering directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_0c1b8.dir/CMakeCXXCompilerABI.cpp.o
+/usr/tce/bin/c++     -o CMakeFiles/cmTC_0c1b8.dir/CMakeCXXCompilerABI.cpp.o -c /usr/tce/packages/cmake/cmake-3.9.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_0c1b8
+/usr/tce/packages/cmake/cmake-3.9.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0c1b8.dir/link.txt --verbose=1
+/usr/tce/bin/c++      -v -rdynamic CMakeFiles/cmTC_0c1b8.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_0c1b8 
+Reading specs from /usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/specs
+COLLECT_GCC=/usr/tce/packages/gcc/gcc-4.9.3/bin/c++
+COLLECT_LTO_WRAPPER=/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/lto-wrapper
+Target: x86_64-unknown-linux-gnu
+Configured with: /builddir/build/BUILD/gccspack/spack/var/spack/stage/gcc-4.9.3-34vmmvov5ct2riknhkfcmxieffb5pyex/gcc-4.9.3/configure --prefix=/usr/tce/packages/gcc/gcc-4.9.3 --libdir=/usr/tce/packages/gcc/gcc-4.9.3/lib64 --disable-multilib --enable-languages=c,java,c++,fortran,objc,go --with-mpc=/builddir/build/BUILD/gccspack/spack/opt/spack/linux-redhat7-x86_64/gcc-4.8.5/mpc-1.0.3-hj3ado6aurkkeiulr7fabqov7dh5nomf --with-mpfr=/builddir/build/BUILD/gccspack/spack/opt/spack/linux-redhat7-x86_64/gcc-4.8.5/mpfr-3.1.4-btpsymgkcfsazkot7mksiiaiqi56q3iz --with-gmp=/builddir/build/BUILD/gccspack/spack/opt/spack/linux-redhat7-x86_64/gcc-4.8.5/gmp-6.1.0-rdkrxbnzwlletmtlntg4vbxhc24zspva --enable-lto --with-quad
+Thread model: posix
+gcc version 4.9.3 (GCC) 
+COMPILER_PATH=/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/:/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/:/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/:/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/:/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/
+LIBRARY_PATH=/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/:/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_0c1b8' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/collect2 -plugin /usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/liblto_plugin.so -plugin-opt=/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/lto-wrapper -plugin-opt=-fresolution=/var/tmp/yeom2/cca7p5k9.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -rpath /usr/tce/packages/gcc/gcc-4.9.3/lib:/usr/tce/packages/gcc/gcc-4.9.3/lib64 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_0c1b8 /lib/../lib64/crt1.o /lib/../lib64/crti.o /usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/crtbegin.o -L/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3 -L/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../.. CMakeFiles/cmTC_0c1b8.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/crtend.o /lib/../lib64/crtn.o
+gmake[1]: Leaving directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/gmake" "cmTC_0c1b8/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTC_0c1b8.dir/build.make CMakeFiles/cmTC_0c1b8.dir/build]
+  ignore line: [gmake[1]: Entering directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_0c1b8.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/tce/bin/c++     -o CMakeFiles/cmTC_0c1b8.dir/CMakeCXXCompilerABI.cpp.o -c /usr/tce/packages/cmake/cmake-3.9.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_0c1b8]
+  ignore line: [/usr/tce/packages/cmake/cmake-3.9.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0c1b8.dir/link.txt --verbose=1]
+  ignore line: [/usr/tce/bin/c++      -v -rdynamic CMakeFiles/cmTC_0c1b8.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_0c1b8 ]
+  ignore line: [Reading specs from /usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/specs]
+  ignore line: [COLLECT_GCC=/usr/tce/packages/gcc/gcc-4.9.3/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/lto-wrapper]
+  ignore line: [Target: x86_64-unknown-linux-gnu]
+  ignore line: [Configured with: /builddir/build/BUILD/gccspack/spack/var/spack/stage/gcc-4.9.3-34vmmvov5ct2riknhkfcmxieffb5pyex/gcc-4.9.3/configure --prefix=/usr/tce/packages/gcc/gcc-4.9.3 --libdir=/usr/tce/packages/gcc/gcc-4.9.3/lib64 --disable-multilib --enable-languages=c,java,c++,fortran,objc,go --with-mpc=/builddir/build/BUILD/gccspack/spack/opt/spack/linux-redhat7-x86_64/gcc-4.8.5/mpc-1.0.3-hj3ado6aurkkeiulr7fabqov7dh5nomf --with-mpfr=/builddir/build/BUILD/gccspack/spack/opt/spack/linux-redhat7-x86_64/gcc-4.8.5/mpfr-3.1.4-btpsymgkcfsazkot7mksiiaiqi56q3iz --with-gmp=/builddir/build/BUILD/gccspack/spack/opt/spack/linux-redhat7-x86_64/gcc-4.8.5/gmp-6.1.0-rdkrxbnzwlletmtlntg4vbxhc24zspva --enable-lto --with-quad]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.9.3 (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/:/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/:/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/:/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/:/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/:/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_0c1b8' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/collect2 -plugin /usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/liblto_plugin.so -plugin-opt=/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/lto-wrapper -plugin-opt=-fresolution=/var/tmp/yeom2/cca7p5k9.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -rpath /usr/tce/packages/gcc/gcc-4.9.3/lib:/usr/tce/packages/gcc/gcc-4.9.3/lib64 --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_0c1b8 /lib/../lib64/crt1.o /lib/../lib64/crti.o /usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/crtbegin.o -L/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3 -L/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../.. CMakeFiles/cmTC_0c1b8.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/crtend.o /lib/../lib64/crtn.o]
+    arg [/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/tce/packages/gcc/gcc-4.9.3/libexec/gcc/x86_64-unknown-linux-gnu/4.9.3/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/var/tmp/yeom2/cca7p5k9.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-rpath] ==> ignore
+    arg [/usr/tce/packages/gcc/gcc-4.9.3/lib:/usr/tce/packages/gcc/gcc-4.9.3/lib64] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_0c1b8] ==> ignore
+    arg [/lib/../lib64/crt1.o] ==> ignore
+    arg [/lib/../lib64/crti.o] ==> ignore
+    arg [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/crtbegin.o] ==> ignore
+    arg [-L/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3] ==> dir [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3]
+    arg [-L/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../../../lib64] ==> dir [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../..] ==> dir [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../..]
+    arg [CMakeFiles/cmTC_0c1b8.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/crtend.o] ==> ignore
+    arg [/lib/../lib64/crtn.o] ==> ignore
+  collapse library dir [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3] ==> [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3]
+  collapse library dir [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../../../lib64] ==> [/usr/tce/packages/gcc/gcc-4.9.3/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3/../../..] ==> [/usr/tce/packages/gcc/gcc-4.9.3/lib64]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit dirs: [/usr/tce/packages/gcc/gcc-4.9.3/lib64/gcc/x86_64-unknown-linux-gnu/4.9.3;/usr/tce/packages/gcc/gcc-4.9.3/lib64;/lib64;/usr/lib64]
+  implicit fwks: []
+
+
+
+
+Detecting CXX [-std=c++14] compiler features compiled with the following output:
+Change Dir: /p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_57a08/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_57a08.dir/build.make CMakeFiles/cmTC_57a08.dir/build
+gmake[1]: Entering directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_57a08.dir/feature_tests.cxx.o
+/usr/tce/bin/c++    -std=c++14 -o CMakeFiles/cmTC_57a08.dir/feature_tests.cxx.o -c /p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_57a08
+/usr/tce/packages/cmake/cmake-3.9.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_57a08.dir/link.txt --verbose=1
+/usr/tce/bin/c++       -rdynamic CMakeFiles/cmTC_57a08.dir/feature_tests.cxx.o  -o cmTC_57a08 
+gmake[1]: Leaving directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++11] compiler features compiled with the following output:
+Change Dir: /p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_c4f32/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_c4f32.dir/build.make CMakeFiles/cmTC_c4f32.dir/build
+gmake[1]: Entering directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c4f32.dir/feature_tests.cxx.o
+/usr/tce/bin/c++    -std=c++11 -o CMakeFiles/cmTC_c4f32.dir/feature_tests.cxx.o -c /p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_c4f32
+/usr/tce/packages/cmake/cmake-3.9.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c4f32.dir/link.txt --verbose=1
+/usr/tce/bin/c++       -rdynamic CMakeFiles/cmTC_c4f32.dir/feature_tests.cxx.o  -o cmTC_c4f32 
+gmake[1]: Leaving directory `/p/lscratchh/yeom2/FLUX/lbann-jyeom/tools/conduit-load/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
