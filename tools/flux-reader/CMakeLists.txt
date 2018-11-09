@@ -30,9 +30,8 @@ add_definitions(-O2)
 add_definitions(-fopenmp)
 add_definitions(-g)
 add_definitions(-std=c++11)
-add_definitions(-D_JAG_OFFLINE_TOOL_MODE_)
+add_definitions(-D_FLUX_OFFLINE_TOOL_MODE_)
 add_definitions(-DLBANN_HAS_OPENCV)
-add_definitions(-DLBANN_HAS_CONDUIT)
 add_definitions(-DLBANN_NO_OMP_FOR_DATA_READERS)
 
 
@@ -54,26 +53,6 @@ include_directories(SYSTEM ${OpenCV_INCLUDE_DIRS})
 link_directories(${OpenCV_LIB_DIR})
 
 
-#set(CONDUIT_DIR /p/lscratchh/brainusr/conduit/conduit-${CLUSTER})
-set(CONDUIT_DIR /usr/workspace/wsb/icfsi/conduit/install-toss3-dev)
-#set(CONDUIT_DIR /usr/workspace/wsb/icfsi/conduit/install-blueos-dev)
-#set(HDF5_DIR /usr/workspace/wsb/icfsi/conduit-helpers/hdf5-${CLUSTER}/hdf5)
-set(HDF5_DIR /usr/workspace/wsb/icfsi/conduit-helpers/hdf5-quartz/hdf5)
-
-message(STATUS "CONDUIT_DIR: ${CONDUIT_DIR}")
-set(CONDUIT_LIB_DIR "${CONDUIT_DIR}/lib")
-set(CONDUIT_LIBRARIES "libconduit.so;libconduit_relay.so")
-link_directories(${CONDUIT_LIB_DIR})
-set(CONDUIT_INCLUDE_DIRS "${CONDUIT_DIR}/include")
-
-if(HDF5_DIR)
-  message(STATUS "HDF5_DIR: ${HDF5_DIR}")
-  set(HDF5_LIB_DIR "${HDF5_DIR}/lib")
-  set(HDF5_LIBRARIES "libhdf5.so")
-  link_directories(${HDF5_LIB_DIR})
-  set(HDF5_INCLUDE_DIRS "${HDF5_DIR}/include")
-endif()
-
 include_directories(SYSTEM ${CONDUIT_INCLUDE_DIRS} ${HDF5_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR})
 
 
@@ -85,23 +64,23 @@ include_directories(${MPI_CXX_INCLUDE_PATH})
 file(GLOB CONDUIT_LOAD_DEPEND_SRCS
      data_reader_flux.cpp
      lbann/utils/random.cpp
-     ${LBANN_DIR}/src//utils/file_utils.cpp
-     ${LBANN_DIR}/src/data_readers/image_utils.cpp
-     ${LBANN_DIR}/src/data_readers/cv_utils.cpp
-     ${LBANN_DIR}/src/data_readers/cv_augmenter.cpp
-     ${LBANN_DIR}/src/data_readers/cv_colorizer.cpp
-     ${LBANN_DIR}/src/data_readers/cv_cropper.cpp
-     ${LBANN_DIR}/src/data_readers/cv_decolorizer.cpp
-     ${LBANN_DIR}/src/data_readers/cv_mean_extractor.cpp
-     ${LBANN_DIR}/src/data_readers/cv_normalizer.cpp
-     ${LBANN_DIR}/src/data_readers/cv_process.cpp
-     ${LBANN_DIR}/src/data_readers/cv_process_patches.cpp
-     ${LBANN_DIR}/src/data_readers/cv_subtractor.cpp
-     ${LBANN_DIR}/src/data_readers/cv_transform.cpp
-     ${LBANN_DIR}/src/data_readers/patchworks/patchworks.cpp
-     ${LBANN_DIR}/src/data_readers/patchworks/patchworks_patch_descriptor.cpp
-     ${LBANN_DIR}/src/data_readers/patchworks/patchworks_ROI.cpp
-     ${LBANN_DIR}/src/data_readers/patchworks/patchworks_stats.cpp)
+     ${LBANN_DIR}/src//utils/file_utils.cpp)
+#     ${LBANN_DIR}/src/data_readers/image_utils.cpp
+#     ${LBANN_DIR}/src/data_readers/cv_utils.cpp
+#     ${LBANN_DIR}/src/data_readers/cv_augmenter.cpp
+#     ${LBANN_DIR}/src/data_readers/cv_colorizer.cpp
+#     ${LBANN_DIR}/src/data_readers/cv_cropper.cpp
+#     ${LBANN_DIR}/src/data_readers/cv_decolorizer.cpp
+#     ${LBANN_DIR}/src/data_readers/cv_mean_extractor.cpp
+#     ${LBANN_DIR}/src/data_readers/cv_normalizer.cpp
+#     ${LBANN_DIR}/src/data_readers/cv_process.cpp
+#     ${LBANN_DIR}/src/data_readers/cv_process_patches.cpp
+#     ${LBANN_DIR}/src/data_readers/cv_subtractor.cpp
+#     ${LBANN_DIR}/src/data_readers/cv_transform.cpp
+#     ${LBANN_DIR}/src/data_readers/patchworks/patchworks.cpp
+#     ${LBANN_DIR}/src/data_readers/patchworks/patchworks_patch_descriptor.cpp
+#     ${LBANN_DIR}/src/data_readers/patchworks/patchworks_ROI.cpp
+#     ${LBANN_DIR}/src/data_readers/patchworks/patchworks_stats.cpp)
 
 add_executable(${CONDUIT_LOAD_EXE} ${CONDUIT_LOAD_SRCS} ${CONDUIT_LOAD_DEPEND_SRCS})
 target_link_libraries(${CONDUIT_LOAD_EXE} ${OpenCV_LIBS} ${CONDUIT_LIBRARIES} ${HDF5_LIBRARIES} ${MPI_CXX_LIBRARIES} ${OpenMP_CXX_LIBRARIES})

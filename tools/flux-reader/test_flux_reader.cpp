@@ -59,13 +59,13 @@ int main(int argc, char** argv)
     std::cout << "loading " << data_file << std::endl;
     size_t num_valid_samples = 0ul;
 
-    dreader.load_conduit(data_file, num_valid_samples);
+    dreader.load_a_file(data_file, num_valid_samples);
   }
   std::cout << "time to load consuit file: " << get_time() - t_load << " (sec)" << std::endl;
 
   show_details(dreader);
 
-  const size_t n = dreader.get_num_valid_local_samples();
+  const size_t n = dreader.get_num_local_samples();
   // prepare the fake base data reader class (generic_data_reader) for mini batch data accesses
   const size_t mb_size = 64u;
   dreader.set_num_samples(n);
@@ -97,7 +97,7 @@ void show_help(int argc, char** argv) {
 
 
 void show_details(const lbann::data_reader_flux& dreader) {
-  std::cout << "- number_of_samples: " << dreader.get_num_valid_local_samples() << std::endl;
+  std::cout << "- number_of_samples: " << dreader.get_num_local_samples() << std::endl;
   std::cout << "- linearized data size: " << dreader.get_linearized_data_size() << std::endl;
   std::cout << "- linearized response size: " << dreader.get_linearized_response_size() << std::endl;
 }
@@ -107,7 +107,7 @@ void fetch_iteration(const bool wrt_response,
                      const size_t mb_size,
                      lbann::data_reader_flux& dreader) {
 
-  const size_t n = dreader.get_num_valid_local_samples();
+  const size_t n = dreader.get_num_local_samples();
   const size_t nd = dreader.get_linearized_data_size();
   const size_t nr = dreader.get_linearized_response_size();
   const size_t n_full = (n / mb_size) * mb_size; // total number of samples in full mini batches
