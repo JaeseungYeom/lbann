@@ -20,7 +20,7 @@ void show_help(int argc, char** argv);
 
 void show_details(const lbann::data_reader_flux& dreader);
 
-void fetch_iteration(const bool wrt_response,
+void fetch_iteration(const bool wrt_sample,
                      const size_t mb_size,
                      lbann::data_reader_flux& dreader);
 
@@ -42,10 +42,10 @@ int main(int argc, char** argv)
 
   size_t num_ivars = static_cast<size_t>(atoi(argv[2]));
   bool measure_time = (atoi(argv[3]) > 0);
-  bool wrt_response = (atoi(argv[4]) > 0);
+  bool wrt_sample = (atoi(argv[4]) > 0);
 
   std::cout << "measure_time : " << measure_time << std::endl;
-  std::cout << "wrt_response : " << wrt_response << std::endl;
+  std::cout << "wrt_sample : " << wrt_sample << std::endl;
 
   using namespace lbann;
   using namespace std;
@@ -67,7 +67,7 @@ int main(int argc, char** argv)
 
   const size_t n = dreader.get_num_local_samples();
   // prepare the fake base data reader class (generic_data_reader) for mini batch data accesses
-  const size_t mb_size = 64u;
+  const size_t mb_size = std::min(static_cast<size_t>(64), n);
   dreader.set_num_samples(n);
   dreader.set_mini_batch_size(mb_size);
   dreader.init();
@@ -75,12 +75,12 @@ int main(int argc, char** argv)
   if (measure_time) {
     double t =  get_time();
 
-    fetch_iteration(wrt_response, mb_size, dreader);
+    fetch_iteration(wrt_sample, mb_size, dreader);
 
     std::cout << "time to read all the samples: " << get_time() - t << " (sec)" << std::endl;
   } else {
 
-    fetch_iteration(wrt_response, mb_size, dreader);
+    fetch_iteration(wrt_sample, mb_size, dreader);
   }
 
   return 0;
@@ -89,10 +89,10 @@ int main(int argc, char** argv)
 
 
 void show_help(int argc, char** argv) {
-  std::cout << "Uasge: > " << argv[0] << " data_file num_independent_vars measure_time wrt_response" << std::endl;
+  std::cout << "Uasge: > " << argv[0] << " data_file num_independent_vars measure_time wrt_sample" << std::endl;
   std::cout << "         - num_independent_vars: number of independent variables per sample." << std::endl;
   std::cout << "         - measure_time (1|0): whether to measure the time to read all the samples." << std::endl;
-  std::cout << "         - wrt_response (1|0): whether to print out response variables." << std::endl;
+  std::cout << "         - wrt_sample (1|0): whether to print out response variables." << std::endl;
 }
 
 
@@ -103,7 +103,7 @@ void show_details(const lbann::data_reader_flux& dreader) {
 }
 
 
-void fetch_iteration(const bool wrt_response,
+void fetch_iteration(const bool wrt_sample,
                      const size_t mb_size,
                      lbann::data_reader_flux& dreader) {
 
@@ -119,15 +119,18 @@ void fetch_iteration(const bool wrt_response,
   X.Resize(nd, mb_size);
   Y.Resize(nr, mb_size);
 
-  if (wrt_response) {
+  if (wrt_sample) {
     for (size_t s = 0u; s < n_full; s += mb_size) {
       std::cout << "samples [" << s << ' ' << s+mb_size << ")" << std::endl;
       dreader.fetch_data(X);
       dreader.fetch_responses(Y);
 
       for (size_t c = 0; c < mb_size; ++c) {
+        for(size_t r = 0; r < nd ; ++r) {
+          printf(" %e", X(r, c));
+        }
         for(size_t r = 0; r < nr ; ++r) {
-          printf("\t%e", Y(r, c));
+          printf(" %e", Y(r, c));
         }
         std::cout << std::endl;
       }
@@ -142,8 +145,11 @@ void fetch_iteration(const bool wrt_response,
       dreader.fetch_responses(Y);
 
       for (size_t c = 0; c < n_rem; ++c) {
+        for(size_t r = 0; r < nd ; ++r) {
+          printf("%e", X(r, c));
+        }
         for(size_t r = 0; r < nr ; ++r) {
-          printf("\t%e", Y(r, c));
+          printf("%e", Y(r, c));
         }
         std::cout << std::endl;
       }
