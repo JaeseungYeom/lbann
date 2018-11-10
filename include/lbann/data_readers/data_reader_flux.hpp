@@ -38,20 +38,20 @@
 
 namespace lbann {
 
-using input_handle_t = std::ifstream*;
+using file_handle_t = std::ifstream*;
 #if 0
-constexpr auto data_input_uninitialized = static_cast<input_handle_t>(-1);
+constexpr auto data_input_uninitialized = static_cast<file_handle_t>(-1);
 #else
-constexpr auto data_input_uninitialized = static_cast<input_handle_t>(nullptr);
+constexpr auto data_input_uninitialized = static_cast<file_handle_t>(nullptr);
 #endif
 
 template<typename T>
-bool check_input_handle(T) {
+bool check_file_handle(T) {
   return false;
 }
 
 template<typename T>
-input_handle_t open_input_handle(const std::string& n) {
+file_handle_t open_file_handle(const std::string& n) {
   return data_input_uninitialized;
 }
 
@@ -60,25 +60,26 @@ input_handle_t open_input_handle(const std::string& n) {
  * Store the handles of open hdf5 files, and close files at the end of the
  * life time of this container object.
  */
-class input_handles {
+class file_handles {
+ public:
  protected:
-  std::unordered_map<std::string, input_handle_t> m_open_input_files;
-  std::map<input_handle_t, std::string> m_open_hdf5_handles;
+  std::unordered_map<std::string, file_handle_t> m_open_input_files;
+  std::map<file_handle_t, std::string> m_open_hdf5_handles;
 
  public:
-  ~input_handles();
+  ~file_handles();
   /// Add a handle that corresponds to the filename fname
-  bool add(const std::string& fname, input_handle_t hnd);
+  bool add(const std::string& fname, file_handle_t hnd);
   /**
    *  Returns the handle that corresponds to the given file name.
    *  Reuturns a negative value if not found.
    */
-  input_handle_t get(const std::string& fname) const;
+  file_handle_t get(const std::string& fname) const;
 
-  std::string get(const input_handle_t h) const;
+  std::string get(const file_handle_t h) const;
 
   /// Returns the read-only access to the internal data
-  const std::unordered_map<std::string, input_handle_t>& get() const { return m_open_input_files; }
+  const std::unordered_map<std::string, file_handle_t>& get() const { return m_open_input_files; }
 };
 
 
@@ -90,7 +91,7 @@ class data_reader_flux : public generic_data_reader {
 
   using val_t = double;
   using sample_name_t = size_t;
-  using sample_locator_t = std::pair<sample_name_t, input_handle_t>;
+  using sample_locator_t = std::pair<sample_name_t, file_handle_t>;
   using sample_map_t = std::vector<sample_locator_t>; ///< valid sample map type
 
   data_reader_flux(bool shuffle = true);
@@ -106,9 +107,9 @@ class data_reader_flux : public generic_data_reader {
   void set_num_independent_variables(size_t n);
   size_t get_num_independent_variables() const;
 
-  size_t populate_sample_list(input_handle_t input_hnd);
+  size_t populate_sample_list(file_handle_t input_hnd);
 
-#ifndef _JAG_OFFLINE_TOOL_MODE_
+#ifndef _FLUX_OFFLINE_TOOL_MODE_
   /// Load data and do data reader's chores.
   void load() override;
   /// True if the data reader's current position is valid.
@@ -117,7 +118,7 @@ class data_reader_flux : public generic_data_reader {
   void set_base_offset(const int s) override;
   /// Set the starting mini-batch index for the epoch
   void set_reset_mini_batch_index(const int s) override;
-  /// Get the number of samples in this dataset.
+  /// Get the total number of samples to use in this dataset.
   int get_num_data() const override;
   /// Select the appropriate subset of data based on settings.
   void select_subset_of_data() override;
@@ -127,21 +128,21 @@ class data_reader_flux : public generic_data_reader {
   void set_io_buffer_type(const std::string io_buffer);
 
   /// Set the set of open hdf5 data files
-  void set_open_file_handles(std::shared_ptr<input_handles>& f);
+  void set_open_file_handles(std::shared_ptr<file_handles>& f);
   /// Get the set of open hdf5 data files
-  std::shared_ptr<input_handles>& get_open_file_handles();
+  std::shared_ptr<file_handles>& get_open_file_handles();
 #else
   /// Load a data file
-  void load_conduit(const std::string conduit_file_path, size_t& idx);
+  void load_a_file(const std::string conduit_file_path, size_t& idx);
   /** Manually set m_global_num_samples_to_use and m_local_num_samples_to_use
    *  to avoid calling determine_num_samples_to_use();
    */
   void set_num_samples(size_t ns);
-#endif // _JAG_OFFLINE_TOOL_MODE_
+#endif // _FLUX_OFFLINE_TOOL_MODE_
 
-  /// Return the number of valid samples locally available
-  size_t get_num_valid_local_samples() const;
-  /// Allow read-only access to m_valid_samples member data
+  /// Return the number of samples locally available
+  size_t get_num_local_samples() const;
+  /// Allow read-only access to m_local_samples member data
   const sample_map_t& get_valid_local_samples() const;
   /// Allow read-only access to m_unused_samples member data
   const sample_map_t& get_valid_local_samples_unused() const;
@@ -159,12 +160,15 @@ class data_reader_flux : public generic_data_reader {
   virtual void set_defaults();
   virtual void copy_members(const data_reader_flux& rhs);
 
+  bool load_sample(const size_t i, std::vector<val_t>& sample) const;
   bool fetch_datum(CPUMat& X, int data_id, int mb_idx, int tid) override;
   bool fetch_response(CPUMat& Y, int data_id, int mb_idx, int tid) override;
 
-  size_t compute_num_samples(input_handle_t hnd) const;
+  size_t compute_num_samples(file_handle_t hnd) const;
 
-#ifndef _JAG_OFFLINE_TOOL_MODE_
+  void renew_num_local_samples(size_t new_size);
+
+#ifndef _FLUX_OFFLINE_TOOL_MODE_
   /// Shuffle sample indices
   void shuffle_indices() override;
   /**
@@ -193,8 +197,8 @@ class data_reader_flux : public generic_data_reader {
    */
   void populate_shuffled_indices(const size_t num_samples);
   /// Load a data file
-  void load_conduit(const std::string conduit_file_path, size_t& idx);
-#endif // _JAG_OFFLINE_TOOL_MODE_
+  void load_a_file(const std::string conduit_file_path, size_t& idx);
+#endif // _FLUX_OFFLINE_TOOL_MODE_
 
   /// Check if the given sample id is valid
   bool check_sample_id(const size_t i) const;
@@ -209,18 +213,13 @@ class data_reader_flux : public generic_data_reader {
    * In the future the sample IDs may not be integers; also, this map only
    * includes sample IDs that have <sample_id>/performance/success = 1
    */
-  sample_map_t m_valid_samples;
+  sample_map_t m_local_samples;
   /// To support validation_percent
   sample_map_t m_unused_samples;
 
   /**
-   * The number of local samples that are selected to use.
-   * This is less than or equal to the number of valid samples locally available.
-   */
-  size_t m_local_num_samples_to_use;
-  /**
    * The total number of samples to use.
-   * This is the sum of m_local_num_samples_to_use.
+   * This is less than or equal to the sum of the number of valid samples locally available.
    */
   size_t m_global_num_samples_to_use;
 
@@ -231,7 +230,10 @@ class data_reader_flux : public generic_data_reader {
   std::string m_io_buffer_type;
 
   /// Shared set of the handles of open files/streams
-  std::shared_ptr<input_handles> m_open_input_files;
+  std::shared_ptr<file_handles> m_open_input_files;
+
+  /// responses
+  std::vector<val_t> m_response;
 };
 
 } // end of namespace lbann
