@@ -1,5 +1,6 @@
 #include "lbann/utils/threads/thread_pool.hpp"
 #include "lbann/utils/random_number_generators.hpp"
+#include "lbann/utils/random_number_generators.hpp"
 
 #include <algorithm>
 #include <iostream>
@@ -148,6 +149,24 @@ void thread_pool::do_thread_work_pinned_thread_(int tid, cpu_set_t cpu_set)
   }
   init_io_generator(tid);
   init_fast_io_generator(tid);
+  {
+    int global_rank = -1;
+    MPI_Comm_rank(MPI_COMM_WORLD, &global_rank);
+    std::stringstream sstr;
+    sstr << "init-" + std::to_string(global_rank)
+              + '-' + std::to_string(tid) + ".txt";
+    std::ofstream os(sstr.str());
+    os << std::this_thread::get_id() << ' '
+       << std::hex << get_fast_io_generator()();
+    os.close();
+
+    if (get_local_thread_id() != tid) {
+      LBANN_ERROR("get_local_thread_id() != tid");
+    }
+    if (get_local_thread_idx() != tid) {
+      LBANN_ERROR("get_local_thread_idx() != tid");
+    }
+  }
 
   while (not all_work_done_)
   {
@@ -159,9 +178,14 @@ void thread_pool::do_thread_work_pinned_thread_(int tid, cpu_set_t cpu_set)
 }
 #endif // LBANN_HAS_PTHREAD_AFFINITY_SUPPORT
 
-int thread_pool::get_local_thread_id() {
+int thread_pool::get_local_thread_id() const {
   std::thread::id this_id = std::this_thread::get_id();
-  return m_thread_id_to_local_id_map[this_id];
+  std::unordered_map<std::thread::id, int>::const_iterator it
+    = m_thread_id_to_local_id_map.find(this_id);
+  if (it == m_thread_id_to_local_id_map.cend()) {
+    LBANN_ERROR("Unknown thread id");
+  }
+  return it->second;
 }
 
 }// namespace lbann

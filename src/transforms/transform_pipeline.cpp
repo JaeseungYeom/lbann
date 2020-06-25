@@ -62,12 +62,16 @@ void transform_pipeline::apply(CPUMat& data, std::vector<size_t>& dims) {
 }
 
 void transform_pipeline::apply(El::Matrix<uint8_t>& data, CPUMat& out_data,
-                               std::vector<size_t>& dims) {
+                               std::vector<size_t>& dims,
+                               rng_record_t& record) {
   utils::type_erased_matrix m = utils::type_erased_matrix(std::move(data));
   if (!m_transforms.empty()) {
     bool applied_non_inplace = false;
     size_t i = 0;
     for (; !applied_non_inplace && i < m_transforms.size(); ++i) {
+      fast_rng_gen& gen = get_fast_io_generator();
+      auto r = gen();
+      record.push_back(r);
       if (m_transforms[i]->supports_non_inplace()) {
         applied_non_inplace = true;
         m_transforms[i]->apply(m, out_data, dims);
@@ -83,6 +87,9 @@ void transform_pipeline::apply(El::Matrix<uint8_t>& data, CPUMat& out_data,
       // TODO(pp): Prevent out_data from being resized/reallocated.
       m = utils::type_erased_matrix(std::move(out_data));
       for (; i < m_transforms.size(); ++i) {
+        fast_rng_gen& gen = get_fast_io_generator();
+        auto r = gen();
+        record.push_back(r);
         m_transforms[i]->apply(m, dims);
       }
       out_data = std::move(m.template get<DataType>());

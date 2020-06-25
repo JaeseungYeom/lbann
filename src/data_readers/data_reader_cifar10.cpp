@@ -131,7 +131,7 @@ bool cifar10_reader::fetch_datum(CPUMat& X, int data_id, int mb_idx) {
   std::vector<size_t> dims = {size_t(3), size_t(32), size_t(32)};
   std::copy_n(m_images[data_id].data(), 3*32*32, image.Buffer());
   auto X_v = X(El::IR(0, X.Height()), El::IR(mb_idx, mb_idx + 1));
-  m_transform_pipeline.apply(image, X_v, dims);
+  m_transform_pipeline.apply(image, X_v, dims, m_rng_record[0]);
   return true;
 }
 

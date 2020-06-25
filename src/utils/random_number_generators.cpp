@@ -65,6 +65,7 @@ bool io_generator_seed_inited = false;
 
 thread_local lbann::fast_rng_gen fast_io_generator;
 thread_local bool fast_io_generator_inited = false;
+thread_local int local_thread_idx = -1;
 int fast_io_generator_seed_base = 0;
 bool fast_io_generator_seed_inited = false;
 }
@@ -103,6 +104,7 @@ rng_gen& get_io_generator() {
 fast_rng_gen& get_fast_io_generator() {
   if (!::fast_io_generator_inited) {
     if (!::fast_io_generator_seed_inited) { LBANN_ERROR("Fast I/O RNG seed not set"); }
+    LBANN_ERROR("Fast I/O RNG not initialized");
     ::fast_io_generator.seed(hash_combine(::fast_io_generator_seed_base,
                                           std::this_thread::get_id()));
     ::fast_io_generator_inited = true;
@@ -113,13 +115,19 @@ fast_rng_gen& get_fast_io_generator() {
 void init_io_generator(const int local_thread_id) {
   ::io_generator.seed(hash_combine(::io_generator_seed_base,
                                    local_thread_id));
+  ::local_thread_idx = local_thread_id;
   ::io_generator_inited = true;
 }
 
 void init_fast_io_generator(const int local_thread_id) {
   ::fast_io_generator.seed(hash_combine(::fast_io_generator_seed_base,
                                         local_thread_id));
+  ::local_thread_idx = local_thread_id;
   ::fast_io_generator_inited = true;
+}
+
+int get_local_thread_idx() {
+  return ::local_thread_idx;
 }
 
 void init_random(int seed, lbann_comm *comm) {

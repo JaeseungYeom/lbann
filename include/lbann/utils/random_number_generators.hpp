@@ -80,6 +80,7 @@ void init_io_generator(const int local_thread_id);
  * number generator used for I/O in a deterministic way.
  */
 void init_fast_io_generator(const int local_thread_id);
+int get_local_thread_idx();
 
 /** @brief Initialize the random number generator (with optional seed).
  *

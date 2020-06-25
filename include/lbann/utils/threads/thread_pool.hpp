@@ -107,10 +107,10 @@ public:
   size_type get_num_threads() const noexcept { return threads_.size(); }
 
   /** @brief Convert the C++ thread id into a local thread pool id */
-  int get_local_thread_id();
+  int get_local_thread_id() const;
 
   /** @brief Convert the C++ thread id into a local thread pool id */
-  int get_threads_offset() { return m_threads_offset; }
+  int get_threads_offset() const { return m_threads_offset; }
 
 private:
   /** @brief The task executed by each thread */

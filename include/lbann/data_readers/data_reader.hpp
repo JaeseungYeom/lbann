@@ -661,6 +661,10 @@ class generic_data_reader {
     m_transform_pipeline = std::move(tp);
   }
 
+  using rng_record_t = std::vector<fast_rng_gen::result_type>;
+  std::vector<rng_record_t> m_rng_record;
+  std::vector< std::vector<size_t> > m_sample_record;
+
  protected:
 
   // For use with conduit when samples are corrupt.

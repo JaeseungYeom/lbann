@@ -29,6 +29,7 @@
 #include "lbann/data_readers/data_reader_imagenet.hpp"
 #include "lbann/utils/image.hpp"
 #include "lbann/utils/file_utils.hpp"
+#include <vector>
 
 namespace lbann {
 
@@ -37,7 +38,33 @@ imagenet_reader::imagenet_reader(bool shuffle)
   set_defaults();
 }
 
-imagenet_reader::~imagenet_reader() {}
+imagenet_reader::~imagenet_reader() {
+  int num_io_threads = this->m_rng_record.size();
+
+  std::string ofn_r = "rng-" + m_role + '-'
+                    + std::to_string(this->m_comm->get_trainer_rank()) + '-'
+                    + std::to_string(this->m_comm->get_rank_in_trainer()) +'-';
+
+  std::string ofn_s = "sample-" + m_role + '-'
+                    + std::to_string(this->m_comm->get_trainer_rank()) + '-'
+                    + std::to_string(this->m_comm->get_rank_in_trainer()) +'-';
+
+  for(int tid = 0; tid < num_io_threads; ++tid) {
+    std::ofstream os_r(ofn_r + std::to_string(tid) + ".txt");
+    const auto& record_r = this->m_rng_record[tid];
+    for (const auto r: record_r) {
+      os_r << std::hex << r << std::endl;
+    }
+    os_r.close();
+
+    std::ofstream os_s(ofn_s + std::to_string(tid) + ".txt");
+    const auto& record_s = this->m_sample_record[tid];
+    for (const auto s: record_s) {
+      os_s << s << std::endl;
+    }
+    os_s.close();
+  }
+}
 
 void imagenet_reader::set_defaults() {
   m_image_width = 256;
@@ -100,7 +127,13 @@ bool imagenet_reader::fetch_datum(CPUMat& X, int data_id, int mb_idx) {
   }
 
   auto X_v = create_datum_view(X, mb_idx);
-  m_transform_pipeline.apply(image, X_v, dims);
+  m_transform_pipeline.apply(image, X_v, dims, m_rng_record.at(mb_idx % m_rng_record.size()));
+  if ((mb_idx % m_rng_record.size()) != (size_t) get_local_thread_idx()) {
+    std::string err_msg = "thread id does not match mb_idx "
+                        + std::to_string(mb_idx % m_rng_record.size())
+                        + " != " + std::to_string(get_local_thread_idx());
+    LBANN_ERROR(err_msg);
+  }
 
   return true;
 }

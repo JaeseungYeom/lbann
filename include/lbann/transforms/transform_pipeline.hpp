@@ -30,6 +30,7 @@
 #include "lbann/base.hpp"
 #include "lbann/utils/description.hpp"
 #include "lbann/transforms/transform.hpp"
+#include <vector>
 
 namespace lbann {
 namespace transform {
@@ -38,6 +39,8 @@ namespace transform {
  * Applies a sequence of transforms to input data.
  */
 class transform_pipeline {
+  using rng_record_t = std::vector<fast_rng_gen::result_type>;
+
 public:
   transform_pipeline() {}
   transform_pipeline(const transform_pipeline&);
@@ -78,7 +81,8 @@ public:
    * @param dims Dimensions of data. Will be modified in-place.
    */
   void apply(El::Matrix<uint8_t>& data, CPUMat& out_data,
-             std::vector<size_t>& dims);
+             std::vector<size_t>& dims,
+             rng_record_t& record);
 private:
   /** Ordered list of transforms to apply. */
   std::vector<std::unique_ptr<transform>> m_transforms;

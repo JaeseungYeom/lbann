@@ -75,11 +75,22 @@ void generic_data_reader::setup(int num_io_threads, observer_ptr<thread_pool> io
     m_thread_buffer[tid].resize(get_linearized_data_size());
   }
   m_io_thread_pool = io_thread_pool;
+
+  m_rng_record.resize(num_io_threads);
+  m_sample_record.resize(num_io_threads);
 }
 
 
 bool lbann::generic_data_reader::fetch_data_block(CPUMat& X, El::Int thread_id, El::Int mb_size, El::Matrix<El::Int>& indices_fetched) {
+  thread_id = m_io_thread_pool->get_local_thread_id();
   std::string error_message;
+  if (m_io_thread_pool->get_num_threads() != m_rng_record.size()) {
+    error_message = std::string("======== num_io_threads differs from ")
+                  + std::string("m_io_thread_pool->get_num_threads(): ")
+                  + std::to_string(m_rng_record.size()) + " != "
+                  + std::to_string(m_io_thread_pool->get_num_threads());
+    LBANN_ERROR(error_message);
+  }
   for (int s = thread_id; s < mb_size; s+=m_io_thread_pool->get_num_threads()) {
     int n = m_current_pos + (s * m_sample_stride);
     int index = m_shuffled_indices[n];
@@ -89,6 +100,7 @@ bool lbann::generic_data_reader::fetch_data_block(CPUMat& X, El::Int thread_id, 
     }
     if (!error_message.empty()) { LBANN_ERROR(error_message); }
     indices_fetched.Set(s, 0, index);
+    m_sample_record.at(thread_id).push_back(index);
   }
   return true;
 }
